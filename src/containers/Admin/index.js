@@ -10,7 +10,7 @@ const navConfigs = {
   items: [
     {
       name: "Trang chủ",
-      url: "/employee",
+      url: "/admin",
       icon: "icon-home",
     },
     {
@@ -18,24 +18,19 @@ const navConfigs = {
       name: "chức năng",
     },
     {
-      name: "Tạo tài khoản",
-      url: "/employee/create-customer",
-      icon: "icon-user",
+      name: "Quản lý nhân viên",
+      url: "/admin/manage-employee",
+      icon: "icon-people",
     },
     {
-      name: "Nạp tiền",
-      url: "/employee/recharge-customer",
-      icon: "icon-credit-card",
-    },
-    {
-      name: "Xem lịch sử giao dịch",
-      url: "/employee/transaction",
+      name: "Danh sách giao dịch",
+      url: "/admin/manage-transaction",
       icon: "icon-calendar",
     },
   ],
 };
 
-export const Employee = () => {
+export const Admin = () => {
   return (
     <div className="app">
       <AppHeader fixed>
@@ -58,7 +53,7 @@ export const Employee = () => {
                   />
                 ) : null;
               })}
-              <Redirect from="/employee" to="/employee/create-customer" />
+              <Redirect from="/admin" to="/admin/manage-employee" />
             </Switch>
           </Container>
         </main>

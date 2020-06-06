@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import "./App.scss";
-import { EmployeePage } from "./containers/Employee";
+import { Employee, Admin } from "./containers";
 
 class App extends Component {
   render() {
@@ -13,9 +13,14 @@ class App extends Component {
             <Route
               path="/employee"
               name="Employee"
-              render={(props) => <EmployeePage {...props} />}
+              render={(props) => <Employee {...props} />}
             />
-            <Redirect from="/" to="/employee" />
+            <Route
+              path="/admin"
+              name="Admin"
+              render={(props) => <Admin {...props} />}
+            />
+            <Redirect from="/" to="/admin" />
           </Switch>
         </React.Suspense>
       </BrowserRouter>
